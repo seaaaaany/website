@@ -114,31 +114,72 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center animate-box">
                     <h3>2017 Citi Bike Annual Report</h3>
-                    <p>Due to<i> "Tableau public works with a maximum of 15,000,000 rows of data. the data in this workbook exceeds that limit."</i> The results could not upload to the Tableau Public Server. Therefore, it also can not be displayed on the website. You can still find the results below.</p>
+                    <p>
+                        Due to the limitation of Tableau Public Server (<i>"Tableau public works with a maximum of 15,000,000 rows of data. the data in this workbook exceeds that limit."</i>) The results could not upload to the Tableau Public Server. However, you can still find the results below.
+                    </p>
+                    <hr>
                     <br>
                     <h4>Background</h4>
-                    <b>Experience NYC in a Whole New Way</b>
-                    <br><a href="https://www.citibikenyc.com/" target="_blank">Citi Bike</a> is the nation’s largest bike share program, with 12,000 bikes and 750 stations across Manhattan, Brooklyn, Queens and Jersey City. It was designed for quick trips with convenience in mind, and it’s a fun and affordable way to get around town.
+                    <p>
+                        <b>Experience NYC in a Whole New Way. </b><a href="https://www.citibikenyc.com/" target="_blank">Citi Bike</a> is the nation’s largest bike share program, with 12,000 bikes and 750 stations across Manhattan, Brooklyn, Queens and Jersey City. It was designed for quick trips with convenience in mind, and it’s a fun and affordable way to get around town.
+                        <br>
+                        <br>Since 2013, the Citi Bike Program has implemented a robust infrastructure for collecting data on the program’s utilization. Through the team’s efforts, each month bike data is collected, organized, and made public on the <a href="https://www.citibikenyc.com/system-data" target=_blank>Citi Bike Data</a> webpage.
+                        <br>
+                        <br>In this project, the annual report for year 2017 would be generated for city officials to publicize and improve the city program.
+                        <hr>
+                        <br>
+                    </p>
+                    <!--  Data Engineering  -->
+                    <h4>Data Engineering</h4>
+                    <p>
+                        The Tableau workbook is saved as <code>citi_bike_analysis.twbx</code> and the data used for this workbook was zipped into the <code>citi_bike_data_2017.csv.zip</code>.Since both of files exceed 100 MB, I decided to remove them from GitHub repository and website. However, you can find the data cleaning process below.
+                        <br>
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/citi_bike_data_cleaning.png?raw=true" style="width:900px;height:400px;" align="center">
+                    </p>
+                    <hr>
                     <br>
-                    <br>Since 2013, the Citi Bike Program has implemented a robust infrastructure for collecting data on the program’s utilization. Through the team’s efforts, each month bike data is collected, organized, and made public on the <a href="https://www.citibikenyc.com/system-data" target=_blank>Citi Bike Data</a> webpage.
-                    <br>
-                    <br>In this project, the annual report for year 2017 would be generated for city officials to publicize and improve the city program.
-                </div>
-            </div>
-        </div>
+                    <h4>Data Visualization & Report</h4>
+                    <p>
 
-        <!--  Analysis  -->
-        <div id="fh5co-about">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1 text-center animate-box">
-                    <h4>Analysis</h4>
-                    <p>The Tableau workbook is saved as <code>citi_bike_analysis.twbx</code> and the data used for this workbook was zipped into the <code>citi_bike_data_2017.csv.zip</code>.</p>
-                    <br>
-                    <br>Since both of files exceed 100MB, I decided to remove them from GitHub repository and website.
-                    <br>
-                    <br>Since 2013, the Citi Bike Program has implemented a robust infrastructure for collecting data on the program’s utilization. Through the team’s efforts, each month bike data is collected, organized, and made public on the <a href="https://www.citibikenyc.com/system-data" target=_blank>Citi Bike Data</a> webpage.
-                    <br>
-                    <br>In this project, the annual report for year 2017 would be generated for city officials to publicize and improve the city program.
+                        <b>16,364,516</b> trips have been recorded during the selected period -- the year 2017. The trend line of two types of the rider (customer and subscriber) matches the growth in ridership over month by month. There is a significant increase in demand during the late Spring and Summertime. After this, the demand shrunk because of the cold weather in NYC, as well as the holiday season.
+                        <br>
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/Citi_Bike_2017_Analysis_1.png?raw=true" style="width:850px;height:750px;" align="center">
+                        <br>
+                        <hr>
+                        It's hard to see the difference between the peak hours in Summer (Jun-Aug) and Winter (Dec-Feb). People chose to take Citi bike to workplaces during 8:00 a.m--9:00 a.m. period, and back home at 5:00 p.m. -- 7:00 p.m. period to avoid the busy traffic and expensive parking fees. As a result, we think the opening time for companies in NYC is around <b>8:00 a.m --  5:00 p.m.</b>
+                        <br>
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/Citi_Bike_2017_Analysis_2.png?raw=true" style="width:850px;height:750px;" align="center">
+                        <br>
+                        <hr>
+                        This report will showcase the top 10 starting/ending station and bottom 10 starting/ending stations under Citi bike services in NYC. It almost covers the busiest and the most depressed districts in NYC.
+                        <br>
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/Citi_Bike_2017_Analysis_3.png?raw=true" style="width:850px;height:800px;" align="center">
+                        <br>
+                        <hr>
+                        Male takes the majority role of the Citi bike riders, over 67% male chose to Citi bike service in 2017. According to the female weekly influence, from week 11 (March 2017), the number of female customers has a significant increase and hit the highest point in week 38 (Middle September 2017). As we mentioned before, the Winter, as well as the holiday season came across the NYC, the demand shrunk heavily at the end of 2017.
+                        <br>
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/Citi_Bike_2017_Analysis_4.png?raw=true" style="width:850px;height:800px;" align="center">
+                        <br>
+                        <hr>
+                        Besides the average miles ridden per customer is 1.132 miles, you might notice one interesting thing--the age. Looks like a lot of people <b>hid and faked their age</b>.<br>
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/Citi_Bike_2017_Analysis_5.png?raw=true" style="width:850px;height:800px;" align="center">
+                        <br>
+                        <hr>
+                        The model 27111 and 27161 looks like have the higher quality above the rest models. The bike models start at <b>24</b>, <b>25</b>, and <b>26</b> generally token repair/ inspection <b>more frequently</b> than other models in the year 2017.<br>
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/Citi_Bike_2017_Analysis_6.png?raw=true" style="width:850px;height:800px;" align="center">
+                        <br>
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/Citi_Bike_2017_Analysis_7.png?raw=true" style="width:850px;height:800px;" align="center">
+                        <br>
+                        <hr>
+                        The maps below will show the stations used in the year 2017 based on the records.<br>
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/Citi_Bike_2017_Analysis_8.png?raw=true" style="width:850px;height:800px;" align="center">
+                        <br>
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/Citi_Bike_2017_Analysis_9.png?raw=true" style="width:850px;height:800px;" align="center">
+                        <br>
+                        <hr>
+
+
+                    </p>
                 </div>
             </div>
         </div>
