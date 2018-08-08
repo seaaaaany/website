@@ -143,12 +143,37 @@
                     </p>
             </div>
 
-            <!--  Pull data  -->
+            <!--  Data Cleaning  -->
             <div>
+            <ul style="list-style-type: none">
+                    <br>
+                    <h3>Data Cleaning</h3>
+                    <p>
+                        <br>The Center for Disease Control (CDC) and the Department of Health and Human Resources (HHS) are both government agencies.  However, they use vastly different time periods for tracking the influenza season.<br>
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/Slide04.jpeg?raw=true" width="900" height="550"><br>
+                        <br>The data from the CDC  was manually downloaded from a website to a CSV file.  This file was loaded directly into a pandas Dataframe.<br>
+                        <br>The data from the HHS was acquired from an API.  The results of the query was loaded directly into a python dictionary which was  loaded directly into a pandas Dataframe.<br>
+                        <br>These DataFrames were merged, allowing the creation of plots that compared cases of influenza to rates of vaccination.
 
+                    <hr>
+                    </p>
             </div>
 
-
+            <!--  plot work  -->
+            <div>
+            <ul style="list-style-type: none">
+                    <h3>Data Visualization</h3>
+                    <p>
+                        <br>First, let's look at the number of flu cases in the past 10 years. The trend line goes up in 2009 because of the swine flu pandemic. Then goes down after because more and more people decided to take the flu shot. However, in the past 5 years, the trendline goes very high, and in the year 2017, the flu season becomes the worst in nearly a decade.<br>
+                        <br>Now, it's time to take a flu shot.
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/Number%20of%20Flu%20Cases_2008-2017.png?raw=true" width="950" height="700">
+                        <br>
+                        <br>Let's take a close look to see what happen in that year. You can find the plot work process and result below.
+                        <br>
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/ploy_2017.png?raw=true" width="950" height="1550">
+                    <hr>
+                    </p>
+            </div>
 
 
             <!--  Technology Stack Used  -->
