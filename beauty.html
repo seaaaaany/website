@@ -113,57 +113,102 @@
             <div>
             <ul style="list-style-type: none">
                     <br>
-                    <h3>Background & Data Sources</h3>
+                    <h3>Background</h3>
                     <p>
-                        <br>In this project, I'm analyzing the trends shaping people's lives back to 2014, as well as creating charts, graphs and interactives to help understand the findings. The data we're using collected from <a href="https://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml" target="_blank">American Community Survey (ACS)</a> and the <a href="https://chronicdata.cdc.gov/Behavioral-Risk-Factors/BRFSS-2014-Overall/5ra3-ixqq" target="_blank">Behavioral Risk Factor Surveillance System (BRFSS)</a>.
-                        <br>
+                        Once Walt Disney Pictures began adapting its animated classics for live-action, starting with Tim Burton’s 2010 take on Alice in Wonderland and moving into villain-centered fairy tales like Maleficent, it was a safe bet that a new version of <b>Beauty and the Beast</b> wouldn’t be too far behind. The 1991 film is beloved the world over and was a central part of pop culture for countless Millennials growing up. Plus, it garnered heaps of critical praise and a Best Picture nomination at the Oscars, the first for an animated film. So it’s no surprise that Disney has gone all-in with its live-action remake of Beauty and the Beast: it boasts an all-star cast including <b>Emma Watson</b>, <b>Dan Stevens</b>, <b>Ewan McGregor</b>, <b>Ian McKellen</b>, <b>Luke Evans</b>, and more; its director, <b>Bill Condon</b>, has directed everything from entries in the Twilight Saga to the Dreamgirls musical adaptation; and its reported $160 million budget is evident in the sets, costumes, and extensive CGI. &#10102;
                     <hr>
                     </p>
             </div>
 
-
-            <!--  Story  -->
+            <!--  Data Sources  -->
             <div>
             <ul style="list-style-type: none">
                     <br>
-                    <h3>Story</h3>
+                    <h3>Data Sources</h3>
                     <p>
-                        <br>Generally, among Americans, smoking decreases as income increases. (When you select 'Household Income (Median)' and 'Smokes (%)' at the same time.)
+                        The movie data for both movies are scrapped from <a href="https://www.boxofficemojo.com/">boxofficemojo</a>. The years we selected are from 1980 to 2018.<br>
                         <br>
-                        <br>Nationwide, one of the interesting facts is when we select household income as a fixed value, the smokes (%) and alcohol consumption (%) are opposite. The household income at 50,000 has some tiny change, but the States at 40,000 and 70,000 are switching their positions.<br>
-                        <br>Also, it is interesting to see the state of Puerto Rico is getting clustered out from the central states in America in the most of the indicators.<br>
+                        <b>Python Scrape Code Preview</b>
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/beauty_data.png?raw=true" width="900" height="1300">
+                        <br>
+                        <br>
+                        <br><b>Data Preview</b>
+                        <br><img src="https://github.com/yycyjqc/Beauty_And_The_Beast_Analysis/blob/master/readme_images/data_preview.png?raw=true" width="900" height="125">
+                        <br>
+                        <br>You can find and download all cleaned data at <a href="https://github.com/yycyjqc/Beauty_And_The_Beast_Analysis/tree/master/dataset">here</a>
+
                     <hr>
                     </p>
             </div>
 
+            <!--  Analysis  -->
+            <div>
+            <ul style="list-style-type: none">
+                    <br>
+                    <h3>Analysis</h3>
+                    <p>
+                        Let's start with total gross and opening.
+                        <br>
+                        <br><img src="https://github.com/yycyjqc/Beauty_And_The_Beast_Analysis/blob/master/result_img/Total_Gross_vs_Opening_1991.png?raw=true" width="900">
+                        <br>
+                        <br><img src="https://github.com/yycyjqc/Beauty_And_The_Beast_Analysis/blob/master/result_img/Total_Gross_vs_Opening_2017.png?raw=true" width="900">
+                        <br>
+                        <br>Those two plots show the top five movies in year 1991 and year 2017. It is interesting to see the Beauty 1991 almost had $0 at opening. The reason I found for that is because only two theaters open at the first week.<br>
+                        <br>Also, it's easy to see the rank of top movies is based on the total gross.<br>
+                        <br>
+                        <br><img src="https://github.com/yycyjqc/Beauty_And_The_Beast_Analysis/blob/master/result_img/Weekend_Gross_1991.png?raw=true" width="900">
+                        <br>
+                        <br>It only had two theaters open at the first week, I decide to remove week one data because it was not comparable.
+                        <br>Compared with year 1991 (see the chart below), according to Box Office: 'Beauty and the Beast' smashed records with towering $175 Million debut.
+                        <br>
+                        <br><b>This is what makes Disney such a powerhouse.</b>
+                        <br>
+                        What we could find is both movies were very hot at the first few weeks. 2017 vision kept going down heavyly, after three months, the data was even too small to see one the chart. However, Beauty 1991 hit the highest weekend gross at the week two, and the topic was still very hot until week ten. After that, the point remained around $1,900,000 until the end of the period.<br>
+                        <br><img src="https://github.com/yycyjqc/Beauty_And_The_Beast_Analysis/blob/master/result_img/Weekend_Gross_2017.png?raw=true" width="900">
+                        <br>
+                    <hr>
+                    </p>
+            </div>
 
-
+            <!--  Can We Go Further  -->
+            <div>
+                <ul style="list-style-type: none">
+                    <h3>Can We Go Further</h3>
+                    <li>1. The dataset is very big with over ten categories. It might have huge potential behind the data.</li>
+                    <li>2. Besides , we can calculate the total amount of revenue for each studio yearly, decadely, even accumulated, to see the market share of each movie studio of US market.</li>
+                    <li>3. The correlation between total gross and theaters open.</li>
+                    <br>
+                    <li><b>Update:</b>
+                        <br>Under the same dataset, I've developed a new project to compare the performance of movies that are produced in the past 27 years (1990 -2017). Click here to view the new project <a href="box_office.html"><b>"Hollywood Studio Performance Analysis"</b></a>.
+                    </li>
+                </ul>
+                <hr>
+            </div>
 
             <!--  Technology Stack Used  -->
             <div>
                 <ul style="list-style-type: none">
                     <h3>Technology Stack Used</h3>
-                    <li>D3</li>
-                    <li>Pandas</li>
-                    <li>Flask MicroFrameWork</li>
-                    <li>Javascript</li>
                     <li>Python</li>
-                    <li>HTML/CSS/Bootstrap</li>
-                    <li>Heroku</li>
+                    <li>BeautifulSoup (Web Scraping)</li>
+                    <li>Plotly (Visualization)</li>
+                    <li>Seaborn/Matplotlib (Visualization)</li>
                 </ul>
                 <hr>
             </div>
-            <!--  Website Preview  -->
+
+
+            <!--  Reference  -->
             <div>
             <ul style="list-style-type: none">
-                <h3>Website Preview</h3>
-                <p>
-                    <br><code><a href="https://sean-data-journalism.herokuapp.com/" target="_blank">Click Here to Explore the Project Website.</a></code>
-                    <br>(It might take longer than expect, depends on the traffic of Heroku server)
                     <br>
-                    <br><img src="https://github.com/yycyjqc/website/blob/master/images/smoker_income.gif?raw=true" class="center" width="900" height="600">
-                <hr>
-                </p>
+                    <h3>Reference</h3>
+                    <p>
+                        &#10102;&ensp;Josh Spiegel, (March 20th, 2017). <i><a href="https://www.slashfilm.com/beauty-and-the-beast-compared-to-the-original/">How the New ‘Beauty and the Beast’ Compares to the Animated Classic</a></i>
+
+
+                    <hr>
+                    </p>
             </div>
 
             </div>
