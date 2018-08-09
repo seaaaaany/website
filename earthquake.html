@@ -3,12 +3,13 @@
     <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Vaccinations vs. Influenza</title>
+    <title>Earthquake</title>
 
     <!--  PORTFOLIO  -->
 
     <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Source+Sans+Pro" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro:400,600,700" rel="stylesheet">  ->
 
     <!-- icons.css -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,8 +32,25 @@
     <!-- Theme style  -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/map.css">
+
     <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
+
+    <!-- D3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+
+    <!-- leaflet CDN for CSS  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+
+    <!-- Marker Cluster JS & CSS -->
+    <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
@@ -91,7 +109,20 @@
         <aside id="fh5co-hero">
             <div class="flexslider">
                 <ul class="slides">
-                <li style="background-image: url(https://github.com/yycyjqc/website/blob/master/images/vac.jpg?raw=true);">
+                <li style="background-image: url(https://image.shutterstock.com/z/stock-vector-detailed-illustration-of-a-icy-colored-ground-with-a-large-dividing-crack-eps-vector-584158237.jpg);">
+                    <div class="overlay-gradient"></div>
+                    <div class="container-fluids">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3 slider-text slider-text-bg">
+                                <div class="slider-text-inner text-center">
+                                    <h1>Earthquake</h1>
+                                    <h2>Visualize Earthquakes Occurring Globally</h2>
+                                    <p><a class="btn btn-primary btn-demo" href="https://github.com/yycyjqc/Visualizing_Earthquake_Data_with_Leaflet" target="_blank"></i>View  on Github</a>
+                                    <a class="btn btn-primary btn-learn" href="https://yycyjqc.github.io/Visualizing_Earthquake_Data_with_Leaflet/" target="_blank">Project Website</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </li>
                 </ul>
             </div>
@@ -100,14 +131,15 @@
             <div id="fh5co-about">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center animate-box">
-                    <h3>Vaccinations vs. Influenza</h3>
+                    <h3>Visualize Earthquake Data</h3>
                     <p>
-                        Is there a correlation between flu vaccinations and flu-like-illnesses?
-                        <br><code><a href="https://github.com/yycyjqc/Analyticus" target="_blank">Explore Code on GitHub</a></code>
+                        The data is updated every five minutes., and includes all earthquake data from past seven days.
+                        <br><code><a href="https://yycyjqc.github.io/Visualizing_Earthquake_Data_with_Leaflet/" target="_blank">Click Here to Explore the Project Website</a></code>
                     <hr>
                     </p>
                 </div>
             </div>
+
 
             <!--  Background  -->
             <div>
@@ -115,83 +147,42 @@
                     <br>
                     <h3>Background & Data Sources</h3>
                     <p>
-                        <br>The purpose of this project is to determine if the flu vaccinations were effective against the influenza of this year, thus mitigating recent concerns.
+                        In this project, I've visualized earthquakes occurring globally using a libe API privided by the USGS (United States Geological Survey). The data is updated every 5 minutes., and includes all earthquake data from past 7 days.</br>
+                        </br><b><a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php" target="_blank">USGS</a></b><br>
+                        The USGS is responsible for providing scientific data about natural hazards, the health of our ecosystems and environment; and the impacts of climate and land-use change. Their scientists develop new methods and tools to supply timely, relevant, and useful information about the Earth and its processes
                         <br>
-                        <br>Is there a correlation between flu vaccinations and flu-like-illnesses?<br>
-                        <br>
-                        <br>Health and Human Services (HHS) Vaccination Rates Correlation to The Center Disease Control (CDC) Reporting of Influenza-Like-Illnesses (ILI).
-                        <br>
-                        <br>The Center Disease Control (CDC) publishes "<a href="https://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml" target="_blank">PERCENTAGE OF VISITS FOR INFLUENZA-LIKE-ILLNESS REPORTED BY SENTINEL PROVIDERS</a>" from their "FluView" website.
-                        <br>
-                        <br>The Health and Human Resources (HHS) publishes "trends: vaccination rates for an entire flu year" from their "<a href="https://fluvaccineapi.hhs.gov/" target="_blank">HHS Flu Vaccination API</a>" website.
+                        <br><b><a href="https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json" target="_blank">GeoJSON</a></b></br>
+                        The dataset presents tectonic plates and their boundaries, and in addition orogens and information about the boundaries.
                     <hr>
                     </p>
             </div>
 
+            <h3>Visualize Global Earthquake Data</h3>
+                <div id="mymap"></div>
 
-            <!--  Story  -->
-            <div>
-            <ul style="list-style-type: none">
-                    <br>
-                    <h3>The Story Begins</h3>
-                    <p>
-                        <br><b>Problem:</b> During the recent flu season, the effectiveness of the vaccine was questioned.
-                        <br>
-                        <br><b>Hypothesis:</b> If the vaccine was effective, then states with high vaccination rates will have low influenza rates.<br>
-                        <br><b>Test:</b> Compare vaccination rates from Health and Human Services (HHS) and compare them to the rates of influenza from the Center of Disease Control (CDC).<br>
-                    <hr>
-                    </p>
+
+            <div class="row">
+
+            <div class="col-md-6">
+                <h3>Heatmap</h3>
+                <div id="mymapHeat"></div>
             </div>
 
-            <!--  Data Cleaning  -->
-            <div>
-            <ul style="list-style-type: none">
-                    <br>
-                    <h3>Data Cleaning</h3>
-                    <p>
-                        <br>The Center for Disease Control (CDC) and the Department of Health and Human Resources (HHS) are both government agencies.  However, they use vastly different time periods for tracking the influenza season.<br>
-                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/Slide04.jpeg?raw=true" width="900" height="550"><br>
-                        <br>The data from the CDC  was manually downloaded from a website to a CSV file.  This file was loaded directly into a pandas Dataframe.<br>
-                        <br>The data from the HHS was acquired from an API.  The results of the query was loaded directly into a python dictionary which was  loaded directly into a pandas Dataframe.<br>
-                        <br>These DataFrames were merged, allowing the creation of plots that compared cases of influenza to rates of vaccination.
-
-                    <hr>
-                    </p>
+            <div class="col-md-6">
+                <h3>Clustering</h3>
+                <div id="mymapCluster"></div>
             </div>
 
-            <!--  plot work  -->
-            <div>
-            <ul style="list-style-type: none">
-                    <h3>Data Visualization</h3>
-                    <p>
-                        <br>First, let's look at the number of flu cases in the past 10 years. The trend line goes up in 2009 because of the swine flu pandemic. Then goes down after because more and more people decided to take the flu shot. However, in the past 5 years, the trendline goes very high, and in the year 2017, the flu season becomes the worst in nearly a decade.<br>
-                        <br>Now, it's time to take a flu shot.
-                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/Number%20of%20Flu%20Cases_2008-2017.png?raw=true" width="950" height="700">
-                        <br>
-                        <br>Let's take a close look to see what happen in that year. You can find the plot work process and result below.
-                        <br>
-                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/ploy_2017.png?raw=true" width="950" height="1550">
-                        <br>
-                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/state_level.png?raw=true" width="950" height="570">
-                        <br>
-                        <br>Initial proposal: higher vaccination rate will lead to lower influenza rate. Generally true in most of the 50 states (can tell by color).<br>
-                        <br>However, Louisiana, Mississippi, and New Mexico has low vaccination rate and high flu rate.<br>
-                        <br>The possible reasons we think and educational level, cultural background, they might lead to different belief.<br>
-                        <br>The other thing is the State like Wisconsin, Iowa, Minnesota: high vaccination rate and low flu rate.
-                        <br>
-                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/2017_national.png?raw=true" width="950" height="570">
-                        <br>
-                    <hr>
-                    </p>
-            </div>
-
+        </div>
+            <hr>
 
             <!--  Technology Stack Used  -->
             <div>
                 <ul style="list-style-type: none">
                     <h3>Technology Stack Used</h3>
-                    <li>Python</li>
-                    <li>Seaborn, Matplotlib</li>
+                    <li>HTML/CSS/Bootstrap/Javascript</li>
+                    <li>Leaflet.js</li>
+                    <li>GeoJSON</li>
                 </ul>
                 <hr>
             </div>
@@ -263,6 +254,10 @@
     <script src="js/jquery.countTo.js"></script>
     <!-- Main -->
     <script src="js/main.js"></script>
+    <!-- Logic for mapping -->
+    <script src="js/logic.js"></script>
+    <!-- Headmap -->
+    <script src="js/headmap.js"></script>
 
     </body>
 </html>
