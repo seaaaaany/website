@@ -138,86 +138,65 @@
             <div>
             <ul style="list-style-type: none">
                     <br>
-                    <h3>Data Sources</h3>
+                    <h3>Process</h3>
                     <p>
-                        <xmp>
-                        ...code...
-                        </xmp>
-
-                    <hr>
+                        First, I pulled data from the <a href="https://openweathermap.org/api">OpenWeatherMap API</a> to assemble a dataset on over 500 cities.
+                        <br>
+                        To accomplish this, I created a loop to generate random latitude and longitude, store them into a data frame for further use.
+                        <br>
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/weather_data_source.png?raw=true" height="1200", width="950">
+                        <br>
+                        <br>Next, it would be the API call.
+                        <br>Target the OpenWeatherMap url, find the cities weather information which match the latitude and longitude we generated at previous step. Then set the variables like <i>temperature</i>, <i>humidity</i>, <i>cloudiness</i>, <i>wind speed</i>.
+                        <br>
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/weather_data_source_2.png?raw=true" height="450", width="950">
+                        <br>
+                        <br>Print out the processing message, and write the data into the data frame we created at step 1. The following diagram will show the first 10 rows of results after the API calls.
+                        <br>
+                        <br><img src="https://github.com/yycyjqc/website/blob/master/images/weather_dataframe.png?raw=true" height="400", width="800">
+                        <br>
+                        <br>After assembling the dataset, I used Matplotlib to plot various aspects of the weather vs. latitude. Factors we looked at included: temperature, cloudiness, wind speed, and humidity.
+                        <br>
+                        <br>The <a href="https://yycyjqc.github.io/Weather_Analysis_Visualization_Dashboard/" target="_blank">project side</a> provides the source data and visualizations created as part of the analysis, as well as explanations and descriptions of any trends and correlations witnessed.
+                        <br>
+                        <hr>
                     </p>
             </div>
 
-            <!--  Analysis  -->
+            <!--  Findings  -->
             <div>
             <ul style="list-style-type: none">
                     <br>
-                    <h3>Analysis</h3>
+                    <h3>Findings</h3>
                     <p>
-                        Let's start with total gross and opening.
+                        <img src="https://github.com/yycyjqc/WeatherPy/blob/master/lat_temp.png?raw=true">
                         <br>
-                        <br><img src="https://github.com/yycyjqc/Beauty_And_The_Beast_Analysis/blob/master/result_img/Total_Gross_vs_Opening_1991.png?raw=true" width="900">
+                        <br>As expected, the weather becomes significantly warmer as one approaches the equator (0 Deg. Latitude). More interestingly, however, is the fact that he northern hemisphere tends to be warmer this time of year than the southern hemisphere. This may be due to the tilt of the earth at the time of the yar this data was gathered.
                         <br>
-                        <br><img src="https://github.com/yycyjqc/Beauty_And_The_Beast_Analysis/blob/master/result_img/Total_Gross_vs_Opening_2017.png?raw=true" width="900">
+                        <hr>
                         <br>
-                        <br>Those two plots show the top five movies in year 1991 and year 2017. It is interesting to see the Beauty 1991 almost had $0 at opening. The reason I found for that is because only two theaters open at the first week.<br>
-                        <br>Also, it's easy to see the rank of top movies is based on the total gross.<br>
+                        <br><img src="https://github.com/yycyjqc/WeatherPy/blob/master/lat_cloud.png?raw=true">
                         <br>
-                        <br><img src="https://github.com/yycyjqc/Beauty_And_The_Beast_Analysis/blob/master/result_img/Weekend_Gross_1991.png?raw=true" width="900">
+                        <br>What causes the sky to be cloudy?
                         <br>
-                        <br>It only had two theaters open at the first week, I decide to remove week one data because it was not comparable.
-                        <br>Compared with year 1991 (see the chart below), according to Box Office: 'Beauty and the Beast' smashed records with towering $175 Million debut.
+                        <br>If skies are clear, more heat reaches the earth's surface. However, if skies are cloudy, some of the sun's rays are reflected off the cloud droplets back into space. Therefore, less of the sun's energy is able to reach the earth's surface, which causes the earth to heat up more slowly.
                         <br>
-                        <br><b>This is what makes Disney such a powerhouse.</b>
+                        <br><b>However, according to the diagram above, it looks like there are no correlations between the latitude and cloudiness.</b>
                         <br>
-                        What we could find is both movies were very hot at the first few weeks. 2017 vision kept going down heavyly, after three months, the data was even too small to see one the chart. However, Beauty 1991 hit the highest weekend gross at the week two, and the topic was still very hot until week ten. After that, the point remained around $1,900,000 until the end of the period.<br>
-                        <br><img src="https://github.com/yycyjqc/Beauty_And_The_Beast_Analysis/blob/master/result_img/Weekend_Gross_2017.png?raw=true" width="900">
+                        <hr>
+                        <br><img src="https://github.com/yycyjqc/WeatherPy/blob/master/lat_humidity.png?raw=true">
                         <br>
-                    <hr>
+                        <br>One interesting finding is when on the equator, it's much more humidity than other two hemispheres.
+                        <br>
+                        <br>The northern hemisphere tends to be more humidity this time of year than the southern hemisphere, especially around N25° and N75°.
+                        <br>
+                        <hr>
+                        <br><img src="https://github.com/yycyjqc/WeatherPy/blob/master/lat_wind.png?raw=true">
+                        <br>
+                        <br>As the diagram above, one fact we can easyily figure out: the higher the dimension, the faster the wind speed.
+                        <br>
                     </p>
             </div>
-
-            <!--  Can We Go Further  -->
-            <div>
-                <ul style="list-style-type: none">
-                    <h3>Can We Go Further</h3>
-                    <li>1. The dataset is very big with over ten categories. It might have huge potential behind the data.</li>
-                    <li>2. Besides , we can calculate the total amount of revenue for each studio yearly, decadely, even accumulated, to see the market share of each movie studio of US market.</li>
-                    <li>3. The correlation between total gross and theaters open.</li>
-                    <br>
-                    <li><b>Update:</b>
-                        <br>Under the same dataset, I've developed a new project to compare the performance of movies that are produced in the past 27 years (1990 -2017). Click here to view the new project <a href="box_office.html"><b>"Hollywood Studio Performance Analysis"</b></a>.
-                    </li>
-                </ul>
-                <hr>
-            </div>
-
-            <!--  Technology Stack Used  -->
-            <div>
-                <ul style="list-style-type: none">
-                    <h3>Technology Stack Used</h3>
-                    <li>Python</li>
-                    <li>BeautifulSoup (Web Scraping)</li>
-                    <li>Plotly (Visualization)</li>
-                    <li>Seaborn/Matplotlib (Visualization)</li>
-                </ul>
-                <hr>
-            </div>
-
-
-            <!--  Reference  -->
-            <div>
-            <ul style="list-style-type: none">
-                    <br>
-                    <h3>Reference</h3>
-                    <p>
-                        &#10102;&ensp;Josh Spiegel, (March 20th, 2017). <i><a href="https://www.slashfilm.com/beauty-and-the-beast-compared-to-the-original/">How the New ‘Beauty and the Beast’ Compares to the Animated Classic</a></i>
-
-
-                    <hr>
-                    </p>
-            </div>
-
             </div>
         </div>
 
